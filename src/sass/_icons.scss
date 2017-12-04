@@ -1,0 +1,20 @@
+.file-icon {
+    position: absolute;
+    top: 2em;
+    left: 1em;
+    background-image: url(../images/file-icons.svg);
+    background-size: 1000px 1000px;
+    width: 52px;
+    height: 74px;
+    background-position: -125px -240px;
+    display: block;
+}
+.media-jpg {
+    background-position: -125px -240px;
+}
+.media-tif {
+    background-position: -203px -240px;
+}
+.media-pdf {
+    background-position: -823px -422px;
+}
