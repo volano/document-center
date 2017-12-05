@@ -26,13 +26,53 @@ $fa-font-path:        "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
 
 $tag-blue: lighten(blue, 25);
+
+.btn-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+
+    .btn-label {
+        display: none;
+    }
+}
+
+.navbar-brand {
+    background: transparent url(../images/eXmark_logo.png) no-repeat center;
+    width: 150px;
+    height: 62px;
+    overflow: hidden;
+    text-indent: -9999em;
+}
+
 .resource {
     border: lightgray 1px solid;
     background-color: #f6f6f6;
     padding: 2em;
     position: relative;
-    margin-bottom: ($spacer / 2);
+    margin-bottom: $spacer;
     padding-left: 5em;
+
+    .toolbox {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .dropdown-toggle {
+        text-align: left;
+        &:after {
+            float: right;
+            margin-top: .5em;
+        }
+    }
+
+    .versions {
+        width: 100%;
+        padding: 1em;
+    }
 }
 
 @import '_icons.scss';

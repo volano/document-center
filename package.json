@@ -25,6 +25,8 @@
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.30.1",
     "kendo-ui-core": "^2017.3.1116",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "node-sass": "^4.7.1",
     "npm-install-webpack-plugin": "^4.0.5",
     "popper.js": "^1.12.9",
