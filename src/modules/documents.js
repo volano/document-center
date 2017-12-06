@@ -1,14 +1,14 @@
 // The scaffold of the data content
 import '@progress/kendo-ui/js/kendo.all.js';
 
-const documents = [
+var documents = [
     {
         "id": "9b225be4-c4a7-4774-8b96-500638c868f1",
         "title":"Name of document",
         "type": "pdf",
         "created": "1467377221",
         "modified": "1512107881",
-        "tag": "9SO", // Document Tag
+        "tag": "9SO", // Document Tag - Refence number
         "version": "b458b23f-b187-4948-8702-4536ec751e14",
         "labels": [
             "Documentation",
@@ -80,4 +80,5 @@ const documents = [
     }
 ];
 
-const documentsDS = kendo.data.DataSource({data: documents});
+const documentsDS = new kendo.data.DataSource({data: documents});
+console.log(documentsDS);

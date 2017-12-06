@@ -11,15 +11,14 @@
     <script src="dist/js/app.bundle.js"></script>
 
     <!--This bundle was moved by the Telerik VS Extensions for compatibility reasons-->
-    <script src="./Documents_files/jqueryval"></script>
 
+    <!--
+    <script src="./Documents_files/jqueryval"></script>
     <link href="./Documents_files/kendo.common.min.css" rel="stylesheet" type="text/css">
     <link href="./Documents_files/kendo.default.min.css" rel="stylesheet" type="text/css">
     <link href="./Documents_files/kendo.dataviz.default.min.css" rel="stylesheet" type="text/css">
-
     <script src="./Documents_files/jszip.min.js"></script>
-    <!-- <script src="./Documents_files/kendo.all.min.js"></script>
-    <script src="./Documents_files/kendo.aspnetmvc.min.js"></script> -->
+    -->
     <script src="./Documents_files/modernizr-2.8.3.js"></script>
 
 
@@ -28,29 +27,30 @@
 <body>
     <header>
         <nav class="navbar navbar-light bg-light navbar-fixed-top">
-            <a href="/" class="navbar-brand">
-                <h1>eXmark Document Center</h1>
-            </a>
+            <div class="container">
+                <a href="/" class="navbar-brand">
+                    <h1>eXmark Document Center</h1>
+                </a>
 
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a class="navbar-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="https://asset-stage.exmark.com/documents/#">Documents<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="https://asset-stage.exmark.com/documents">Manage Documents</a></li>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="navbar-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="https://asset-stage.exmark.com/documents/#">Documents<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://asset-stage.exmark.com/documents">Manage Documents</a></li>
 
-                            <li><a href="https://asset-stage.exmark.com/documents/advisories">Manage Advisories</a></li>
+                                <li><a href="https://asset-stage.exmark.com/documents/advisories">Manage Advisories</a></li>
 
-                            <li><a href="https://asset-stage.exmark.com/documents/bulletins">Manage Bulletins</a></li>
-                        </ul>
-                    </li>
+                                <li><a href="https://asset-stage.exmark.com/documents/bulletins">Manage Bulletins</a></li>
+                            </ul>
+                        </li>
 
 
-                </ul>
+                    </ul>
 
-                <form action="https://asset-stage.exmark.com/documents/Account/LogOff" class="nav navbar-nav navbar-right" id="logoutForm" method="post">
-                    <li class="dropdown hidden-xs">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="https://asset-stage.exmark.com/documents/#">
+                    <form action="https://asset-stage.exmark.com/documents/Account/LogOff" class="nav navbar-nav navbar-right" id="logoutForm" method="post">
+                        <li class="dropdown hidden-xs">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="https://asset-stage.exmark.com/documents/#">
             <span class="hidden-xs hidden-sm">
                 bill@exmark.com <i class="fa fa-angle-down"></i>
             </span>
@@ -59,15 +59,15 @@
             </span>
         </a>
 
-                        <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu" role="menu">
 
-                            <li><a href="javascript:document.getElementById(&#39;logoutForm&#39;).submit()">Log off</a></li>
-                        </ul>
-                    </li>
-                </form>
+                                <li><a href="javascript:document.getElementById(&#39;logoutForm&#39;).submit()">Log off</a></li>
+                            </ul>
+                        </li>
+                    </form>
+                </div>
             </div>
         </nav>
-
     </header>
     <main>
         <div class="container body-content">
@@ -75,22 +75,21 @@
             <!-- Begin file list -->
 
             <div class="page-header">
-                <h2>Documents</h2>
+                <h2>Document Central</h2>
                 <p>Main document repository</p>
+                <div class="input-group">
+                    <input class="form-control" placeholder="Search for labels" type="text" />
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-primary" value="Search">Search</button>
+                    </div>
+                </div>
                 <div class="">
                     <button class="btn btn-default btn-primary addFileButton" data-toggle="modal" data-target="#addDocumentModal">
-                        <span class="fa fa-stack">
-                            <i class="fa fa-plus"></i>
-                            <i class="fa fa-plus"></i>
+                        <span class="fa-stack">
+                            <i class="fa fa-file fa-stack-2x"></i>
+                            <i class="fa fa-plus-circle fa-stack-1x fa-stack-right fa-stack-bottom text-success"></i>
                         </span>
                         <span class="btn-label">Add Document</span>
-                    </button>
-                    <button class="btn btn-default btn-primary addFolderButton" data-toggle="modal" data-target="#addFolderModal">
-                        <span class="fa fa-stack">
-                            <i class="fa fa-tags"></i>
-                            <i class="fa fa-plus"></i>
-                        </span>
-                        <span class="btn-label">Add Label</span>
                     </button>
                 </div>
             </div>
@@ -118,734 +117,151 @@
 
                     <div class="dropdown">
                         <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
-                        <ul class="dropdown-menu versions">
-                            <li class="version">
-                                <h4>Version title</h4>
-                                <p class="description"></p>
-                            </li>
-                            <li class="version">
-                                <h4>Version title</h4>
-                                <p class="description"></p>
-                            </li>
-                            <li class="version">
-                                <h4>Version title</h4>
-                                <p class="description"></p>
-                            </li>
-                            <li class="version">
-                                <h4>Version title</h4>
-                                <p class="description"></p>
-                            </li>
+                        <div class="dropdown-menu">
+                            <ul class="list-group versions">
+                                <li class="list-group-item active version">
+                                    <h4 class="version-title">Version 1</h4>
+                                    <h5 class="version-date">10/22/2016</h5>
+                                    <p class="description">Short description of the version</p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 2</h4>
+                                    <h5 class="version-date">11/23/2016</h5>
+                                    <p class="description">Short description of the version</p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 3</h4>
+                                    <h5 class="version-date">1/12/2017</h5>
+                                    <p class="description"></p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 4</h4>
+                                    <h5 class="version-date">4/17/2017</h5>
+                                    <p class="description"></p>
+                                </li>
+                            </ul>
+                        </div>
 
-                        </ul>
                     </div>
+
+                    <ul class="labels">
+                        <li><a href="/Labels/">Documentation</a></li>
+                        <li><a href="/Labels/">Specifications</a></li>
+                        <li><a href="/Labels/">Customer Service</a></li>
+                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                    </ul>
                 </div>
 
-                <li class="media fileDocument" data-bind="54">
-
-                    <div class="single-document-in-list">
-                        <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/54"></a>
-
-                        <div class="media-body">
-                            <div class="media-heading" style="display:inline-block;">
-                                <div class="invisible">&gt; </div>
-                                <h4> 2015 Bid Specifications </h4></div>
-
-                            <div class="pull-right" style="vertical-align:middle">
-
-                                <div class="document-info" id="pushRight">Document Tag - 8QV</div>
-
-                                <div class="version-info">Current Version: 1</div>
-
-
-                            </div>
-
-                            <p>2015 Product Bid Specs</p>
-
-                            <div class="row" style="margin-bottom:10px;">
-                                <div class="col-lg-12" id="docListButtons">
-                                    <div class="btn-group" role="group">
-                                        <button class="btn btn-default addVersionButton redButton" data-toggle="modal" data-target="#addVersionModal" data-bind="54">Add Version</button>
-                                        <button class="btn btn-default editDocumentButton redButton" data-bind="54">Edit</button>
-                                        <button class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="54" data-type="Document">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="resource">
+                    <div class="toolbox">
+                        <button class="btn btn-default btn-primary btn-circle editDocumentButton " data-bind="53">
+                            <i class="fa fa-pencil"></i>
+                            <span class="btn-label">Edit</span>
+                        </button>
+                        <button class="btn btn-default btn-danger btn-circle deleteButton " data-toggle="modal" data-target="#deleteConfirmModal" data-bind="53" data-type="Document">
+                            <i class="fa fa-trash"></i>
+                            <span class="btn-label">Delete</span>
+                        </button>
+                    </div>
+                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
+                    <i class="file-icon media-pdf"></i>
+                    <div class="media-body">
+                        <h3> 2016 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
+                        <p class="description">2016 Product Bid Specs</p>
                     </div>
 
-                </li>
-                <li class="versionList">
-
-                    <label class="tree-toggler glyphicon glyphicon-menu-right"></label>
-
-                    <hr>
-
-                    <ul class="tree" style="display: none;">
-
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/70"></a>
-                                </div>
-                                <div class="media-body" data-bind="70">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 1 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-                                            <h4><span class="label label-success">CURRENT VERSION</span></h4>
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="70">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="70" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                    </ul>
-
-                </li>
-
-                <li class="media fileDocument" data-bind="55">
-
-                    <div class="single-document-in-list">
-                        <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/55"></a>
-
-                        <div class="media-body">
-                            <div class="media-heading" style="display:inline-block;">
-                                <div class="invisible">&gt; </div>
-                                <h4> 2014 Bid Specifications </h4></div>
-
-                            <div class="pull-right" style="vertical-align:middle">
-
-                                <div class="document-info" id="pushRight">Document Tag - 8R0</div>
-
-                                <div class="version-info">Current Version: 1</div>
-
-
-                            </div>
-
-                            <p>2014 Product Bid Specs</p>
-
-                            <div class="row" style="margin-bottom:10px;">
-                                <div class="col-lg-12" id="docListButtons">
-                                    <div class="btn-group" role="group">
-                                        <button class="btn btn-default addVersionButton redButton" data-toggle="modal" data-target="#addVersionModal" data-bind="55">Add Version</button>
-                                        <button class="btn btn-default editDocumentButton redButton" data-bind="55">Edit</button>
-                                        <button class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="55" data-type="Document">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
+                        <div class="dropdown-menu">
+                            <ul class="list-group versions">
+                                <li class="list-group-item active version">
+                                    <h4 class="version-title">Version 1</h4>
+                                    <h5 class="version-date">10/22/2016</h5>
+                                    <p class="description">Short description of the version</p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 2</h4>
+                                    <h5 class="version-date">11/23/2016</h5>
+                                    <p class="description">Short description of the version</p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 3</h4>
+                                    <h5 class="version-date">1/12/2017</h5>
+                                    <p class="description"></p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 4</h4>
+                                    <h5 class="version-date">4/17/2017</h5>
+                                    <p class="description"></p>
+                                </li>
+                            </ul>
                         </div>
+
                     </div>
 
-                </li>
-                <li class="versionList">
-
-                    <label class="tree-toggler glyphicon glyphicon-menu-right"></label>
-
-                    <hr>
-
-                    <ul class="tree" style="display: none;">
-
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/71"></a>
-                                </div>
-                                <div class="media-body" data-bind="71">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 1 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-                                            <h4><span class="label label-success">CURRENT VERSION</span></h4>
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="71">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="71" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
+                    <ul class="labels">
+                        <li><a href="/Labels/">Documentation</a></li>
+                        <li><a href="/Labels/">Specifications</a></li>
+                        <li><a href="/Labels/">Customer Service</a></li>
+                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
                     </ul>
+                </div>
 
-                </li>
-
-                <li class="media fileDocument" data-bind="56">
-
-                    <div class="single-document-in-list">
-                        <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/56"></a>
-
-                        <div class="media-body">
-                            <div class="media-heading" style="display:inline-block;">
-                                <div class="invisible">&gt; </div>
-                                <h4> 2013 Bid Specifications </h4></div>
-
-                            <div class="pull-right" style="vertical-align:middle">
-
-                                <div class="document-info" id="pushRight">Document Tag - 8R1</div>
-
-                                <div class="version-info">Current Version: 1</div>
-
-
-                            </div>
-
-                            <p>2013 Product Bid Specs</p>
-
-                            <div class="row" style="margin-bottom:10px;">
-                                <div class="col-lg-12" id="docListButtons">
-                                    <div class="btn-group" role="group">
-                                        <button class="btn btn-default addVersionButton redButton" data-toggle="modal" data-target="#addVersionModal" data-bind="56">Add Version</button>
-                                        <button class="btn btn-default editDocumentButton redButton" data-bind="56">Edit</button>
-                                        <button class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="56" data-type="Document">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="resource">
+                    <div class="toolbox">
+                        <button class="btn btn-default btn-primary btn-circle editDocumentButton " data-bind="53">
+                            <i class="fa fa-pencil"></i>
+                            <span class="btn-label">Edit</span>
+                        </button>
+                        <button class="btn btn-default btn-danger btn-circle deleteButton " data-toggle="modal" data-target="#deleteConfirmModal" data-bind="53" data-type="Document">
+                            <i class="fa fa-trash"></i>
+                            <span class="btn-label">Delete</span>
+                        </button>
+                    </div>
+                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
+                    <i class="file-icon media-pdf"></i>
+                    <div class="media-body">
+                        <h3> 2016 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
+                        <p class="description">2016 Product Bid Specs</p>
                     </div>
 
-                </li>
-                <li class="versionList">
-
-                    <label class="tree-toggler glyphicon glyphicon-menu-right"></label>
-
-                    <hr>
-
-                    <ul class="tree" style="display: none;">
-
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/72"></a>
-                                </div>
-                                <div class="media-body" data-bind="72">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 1 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-                                            <h4><span class="label label-success">CURRENT VERSION</span></h4>
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="72">Edit</button>
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="72" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                    </ul>
-
-                </li>
-
-                <li class="media fileDocument" data-bind="57">
-
-                    <div class="single-document-in-list">
-                        <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/57"></a>
-
-                        <div class="media-body">
-                            <div class="media-heading" style="display:inline-block;">
-                                <div class="invisible">&gt; </div>
-                                <h4> 2012 Bid Specifications </h4></div>
-
-                            <div class="pull-right" style="vertical-align:middle">
-
-                                <div class="document-info" id="pushRight">Document Tag - 8R2</div>
-
-                                <div class="version-info">Current Version: 1</div>
-
-
-                            </div>
-
-                            <p>2012 Product Bid Specs</p>
-
-                            <div class="row" style="margin-bottom:10px;">
-                                <div class="col-lg-12" id="docListButtons">
-                                    <div class="btn-group" role="group">
-                                        <button class="btn btn-default addVersionButton redButton" data-toggle="modal" data-target="#addVersionModal" data-bind="57">Add Version</button>
-                                        <button class="btn btn-default editDocumentButton redButton" data-bind="57">Edit</button>
-                                        <button class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="57" data-type="Document">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
+                        <div class="dropdown-menu">
+                            <ul class="list-group versions">
+                                <li class="list-group-item active version">
+                                    <h4 class="version-title">Version 1</h4>
+                                    <h5 class="version-date">10/22/2016</h5>
+                                    <p class="description">Short description of the version</p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 2</h4>
+                                    <h5 class="version-date">11/23/2016</h5>
+                                    <p class="description">Short description of the version</p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 3</h4>
+                                    <h5 class="version-date">1/12/2017</h5>
+                                    <p class="description"></p>
+                                </li>
+                                <li class="list-group-item version">
+                                    <h4 class="version-title">Version 4</h4>
+                                    <h5 class="version-date">4/17/2017</h5>
+                                    <p class="description"></p>
+                                </li>
+                            </ul>
                         </div>
+
                     </div>
 
-                </li>
-                <li class="versionList">
-
-                    <label class="tree-toggler glyphicon glyphicon-menu-right"></label>
-
-                    <hr>
-
-                    <ul class="tree" style="display:none;">
-
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/73"></a>
-                                </div>
-                                <div class="media-body" data-bind="73">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 1 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-                                            <h4><span class="label label-success">CURRENT VERSION</span></h4>
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="73">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="73" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
+                    <ul class="labels">
+                        <li><a href="/Labels/">Documentation</a></li>
+                        <li><a href="/Labels/">Specifications</a></li>
+                        <li><a href="/Labels/">Customer Service</a></li>
+                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
                     </ul>
+                </div>
 
-                </li>
-
-                <li class="media fileDocument" data-bind="58">
-
-                    <div class="single-document-in-list">
-                        <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/58"></a>
-
-                        <div class="media-body">
-                            <div class="media-heading" style="display:inline-block;">
-                                <div class="invisible">&gt; </div>
-                                <h4> 2011 Bid Specifications </h4></div>
-
-                            <div class="pull-right" style="vertical-align:middle">
-
-                                <div class="document-info" id="pushRight">Document Tag - 8R3</div>
-
-                                <div class="version-info">Current Version: 1</div>
-
-
-                            </div>
-
-                            <p>2011 Product Bid Specs</p>
-
-                            <div class="row" style="margin-bottom:10px;">
-                                <div class="col-lg-12" id="docListButtons">
-                                    <div class="btn-group" role="group">
-                                        <button class="btn btn-default addVersionButton redButton" data-toggle="modal" data-target="#addVersionModal" data-bind="58">Add Version</button>
-                                        <button class="btn btn-default editDocumentButton redButton" data-bind="58">Edit</button>
-                                        <button class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="58" data-type="Document">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="versionList">
-
-                    <label class="tree-toggler glyphicon glyphicon-menu-right"></label>
-
-                    <hr>
-
-                    <ul class="tree" style="display:none;">
-
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/74"></a>
-                                </div>
-                                <div class="media-body" data-bind="74">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 1 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-                                            <h4><span class="label label-success">CURRENT VERSION</span></h4>
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="74">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="74" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                    </ul>
-
-                </li>
-
-                <li class="media fileDocument" data-bind="59">
-
-                    <div class="single-document-in-list">
-                        <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/59"></a>
-
-                        <div class="media-body">
-                            <div class="media-heading" style="display:inline-block;">
-                                <div class="invisible">&gt; </div>
-                                <h4> 2010 Bid Specifications </h4></div>
-
-                            <div class="pull-right" style="vertical-align:middle">
-
-                                <div class="document-info" id="pushRight">Document Tag - 8R4</div>
-
-                                <div class="version-info">Current Version: 1</div>
-
-
-                            </div>
-
-                            <p>2010 Product Bid Specs</p>
-
-                            <div class="row" style="margin-bottom:10px;">
-                                <div class="col-lg-12" id="docListButtons">
-                                    <div class="btn-group" role="group">
-                                        <button class="btn btn-default addVersionButton redButton" data-toggle="modal" data-target="#addVersionModal" data-bind="59">Add Version</button>
-                                        <button class="btn btn-default editDocumentButton redButton" data-bind="59">Edit</button>
-                                        <button class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="59" data-type="Document">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="versionList">
-
-                    <label class="tree-toggler glyphicon glyphicon-menu-right"></label>
-
-                    <hr>
-
-                    <ul class="tree" style="display:none;">
-
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/75"></a>
-                                </div>
-                                <div class="media-body" data-bind="75">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 1 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-                                            <h4><span class="label label-success">CURRENT VERSION</span></h4>
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="75">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="75" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                    </ul>
-
-                </li>
-
-                <li class="media fileDocument" data-bind="780">
-
-                    <div class="single-document-in-list">
-                        <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/780"></a>
-
-                        <div class="media-body">
-                            <div class="media-heading" style="display:inline-block;">
-                                <div class="invisible">&gt; </div>
-                                <h4> 2017 Bid Specifications </h4></div>
-
-                            <div class="pull-right" style="vertical-align:middle">
-
-                                <div class="document-info" id="pushRight">Document Tag - 9HL</div>
-
-                                <div class="version-info">Current Version: 07.10.2017</div>
-
-
-                            </div>
-
-                            <p>2017 Product Bid Specifications</p>
-
-                            <div class="row" style="margin-bottom:10px;">
-                                <div class="col-lg-12" id="docListButtons">
-                                    <div class="btn-group" role="group">
-                                        <button class="btn btn-default addVersionButton redButton" data-toggle="modal" data-target="#addVersionModal" data-bind="780">Add Version</button>
-                                        <button class="btn btn-default editDocumentButton redButton" data-bind="780">Edit</button>
-                                        <button class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="780" data-type="Document">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="versionList">
-
-                    <label class="tree-toggler glyphicon glyphicon-menu-right rotated"></label>
-
-                    <hr>
-
-                    <ul class="tree" style="">
-
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/932"></a>
-                                </div>
-                                <div class="media-body" data-bind="932">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 11.29.2016 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="932">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="932" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/933"></a>
-                                </div>
-                                <div class="media-body" data-bind="933">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 11.30.2016 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="933">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="933" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/975"></a>
-                                </div>
-                                <div class="media-body" data-bind="975">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 11.30.16.2 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="975">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="975" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/1043"></a>
-                                </div>
-                                <div class="media-body" data-bind="1043">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 01.12.2017 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p>Turf Management and Radius S-Series Updates</p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="1043">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="1043" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/1052"></a>
-                                </div>
-                                <div class="media-body" data-bind="1052">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 01.12.2017 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="1052">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="1052" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/1348"></a>
-                                </div>
-                                <div class="media-body" data-bind="1348">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 03.06.2017 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p>Added Suspension Platform</p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="1348">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="1348" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="media" id="version">
-                                <div id="sub-tree-media">
-                                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenVersion/1583"></a>
-                                </div>
-                                <div class="media-body" data-bind="1583">
-                                    <div class="media-heading">
-                                        <div class="invisible">&gt; </div>
-                                        <h4> 07.10.2017 </h4></div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <p></p>
-                                        </div>
-                                        <div class="col-lg-6" id="editdeletegrp">
-
-                                            <h4><span class="label label-success">CURRENT VERSION</span></h4>
-
-                                            <div class="btn-group" role="group" aria-label="...">
-                                                <button type="button" class="btn btn-default editVersionButton redButton" data-bind="1583">Edit</button>
-
-                                                <button type="button" class="btn btn-default deleteButton redButton" data-toggle="modal" data-target="#deleteConfirmModal" data-bind="1583" data-type="Version">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-
-                        </li>
-                    </ul>
-
-                </li>
-
-                </ul>
             </div>
             <!-- End Panel -->
 
@@ -854,6 +270,8 @@
 
         </div>
     </main>
-</body>
+
+
+    <script type="" </body>
 
 </html>

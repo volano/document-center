@@ -17,6 +17,11 @@
 @import "node_modules/bootstrap/scss/breadcrumb";
 @import "node_modules/bootstrap/scss/alert";
 @import "node_modules/bootstrap/scss/card";
+@import "node_modules/bootstrap/scss/utilities";
+
+@import "node_modules/bootstrap/scss/list-group";
+@import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/input-group";
 
 @import "node_modules/bootstrap/scss/code";
 @import "node_modules/bootstrap/scss/nav";
@@ -26,6 +31,10 @@ $fa-font-path:        "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
 
 $tag-blue: lighten(blue, 25);
+
+.navbar {
+    background-color: #e6e6e6;
+}
 
 .btn-circle {
     width: 32px;
@@ -46,19 +55,22 @@ $tag-blue: lighten(blue, 25);
     overflow: hidden;
     text-indent: -9999em;
 }
-
+.page-header {
+    padding-top: 3em;
+    margin-bottom: $spacer;
+}
 .resource {
     border: lightgray 1px solid;
     background-color: #f6f6f6;
     padding: 2em;
     position: relative;
     margin-bottom: $spacer;
-    padding-left: 5em;
+    padding-left: 6em;
 
     .toolbox {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 1em;
+        right: 1em;
     }
 
     .dropdown-toggle {
@@ -69,13 +81,50 @@ $tag-blue: lighten(blue, 25);
         }
     }
 
+    .dropdown-menu {
+        width: 100%;
+    }
     .versions {
         width: 100%;
         padding: 1em;
     }
+
+    .labels {
+        padding: 0;
+        margin: 0;
+        @include clearfix;
+
+        li {
+            float: left;
+            margin: .3em;
+            padding: .3em .8em;
+            background-color: #fafafa;
+            border: 1px solid #b6b6b6;
+            border-radius: .3em;
+            list-style: none;
+
+            &:before {
+                font-family: FontAwesome;
+                margin-right: .3em;
+                display:inline-block;
+                vertical-align: middle;
+                content: "\f02b";
+                color: #666;
+            }
+        }
+    }
 }
 
 @import '_icons.scss';
+
+.fa-stack-right {
+    right: -25%;
+    left: auto;
+}
+
+.fa-stack-bottom {
+    bottom: -25%;
+}
 
 .document-info {
     background-color: $tag-blue;
