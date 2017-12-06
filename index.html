@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documents</title>
+    <title>Document Central</title>
     <link href="dist/css/app.min.css" rel="stylesheet">
     <script src="dist/js/app.bundle.js"></script>
 
@@ -25,48 +25,36 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-light navbar-fixed-top">
-            <div class="container">
-                <a href="/" class="navbar-brand">
-                    <h1>eXmark Document Center</h1>
-                </a>
+    <header class="fixed-top">
+        <nav class="navbar navbar-inverse navbar-dark navbar-expand-sm">
+            <a href="/" class="navbar-brand">
+                <h1>eXmark - Document Central</h1>
+            </a>
 
-                <div class="navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="navbar-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="https://asset-stage.exmark.com/documents/#">Documents<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="https://asset-stage.exmark.com/documents">Manage Documents</a></li>
-
-                                <li><a href="https://asset-stage.exmark.com/documents/advisories">Manage Advisories</a></li>
-
-                                <li><a href="https://asset-stage.exmark.com/documents/bulletins">Manage Bulletins</a></li>
-                            </ul>
-                        </li>
-
-
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="https://asset-stage.exmark.com/documents/#">Documents<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/documents">Manage Documents</a></li>
+                        <li><a href="/advisories">Manage Advisories</a></li>
+                        <li><a href="/bulletins">Manage Bulletins</a></li>
                     </ul>
+                </li>
 
-                    <form action="https://asset-stage.exmark.com/documents/Account/LogOff" class="nav navbar-nav navbar-right" id="logoutForm" method="post">
-                        <li class="dropdown hidden-xs">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="https://asset-stage.exmark.com/documents/#">
-            <span class="hidden-xs hidden-sm">
-                bill@exmark.com <i class="fa fa-angle-down"></i>
-            </span>
-            <span class="hidden-md hidden-lg">
-                <i class="fa fa-cog"></i><i class="fa fa-angle-down hidden-sm"></i>
-            </span>
-        </a>
 
-                            <ul class="dropdown-menu" role="menu">
-
-                                <li><a href="javascript:document.getElementById(&#39;logoutForm&#39;).submit()">Log off</a></li>
-                            </ul>
+                <li class="nav-item dropdown hidden-xs">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="https://asset-stage.exmark.com/documents/#">
+                            <span>bill@exmark.com<span>
+                        </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <form action="https://asset-stage.exmark.com/documents/Account/LogOff" class="nav navbar-nav navbar-right" id="logoutForm" method="post">
+                                <a href="javascript:document.getElementById(&#39;logoutForm&#39;).submit()">Log off</a>
+                            </form>
                         </li>
-                    </form>
-                </div>
-            </div>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -77,10 +65,75 @@
             <div class="page-header">
                 <h2>Document Central</h2>
                 <p>Main document repository</p>
-                <div class="input-group">
-                    <input class="form-control" placeholder="Search for labels" type="text" />
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-primary" value="Search">Search</button>
+                <div class="shaded padded rounded">
+
+                    <div class="wrapper">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Search for labels" type="text" />
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-primary" value="Search"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-block btn-primary" data-toggle="collapse" data-target="#labelListing" aria-expanded="false" aria-controls="labelListing">Label List</button>
+                    <div id="labelListing" class="label-container collapse">
+                        <div class="card card-body">
+                            <div class="label-index">
+                                <div class="btn-group btn-group-justified btn-group-sm" role="group" aria-label="Alphabetical jump list">
+                                    <a href="#label-a" class="btn btn-secondary">A</a>
+                                    <a href="#label-b" class="btn disabled btn-secondary">B</a>
+                                    <a href="#label-c" class="btn btn-secondary">C</a>
+                                    <a href="#label-d" class="btn btn-secondary">D</a>
+                                    <a href="#label-e" class="btn disabled btn-secondary">E</a>
+                                    <a href="#label-f" class="btn disabled btn-secondary">F</a>
+                                    <a href="#label-g" class="btn disabled btn-secondary">G</a>
+                                    <a href="#label-h" class="btn disabled btn-secondary">H</a>
+                                    <a href="#label-i" class="btn disabled btn-secondary">I</a>
+                                    <a href="#label-j" class="btn disabled btn-secondary">J</a>
+                                    <a href="#label-k" class="btn disabled btn-secondary">K</a>
+                                    <a href="#label-l" class="btn disabled btn-secondary">L</a>
+                                    <a href="#label-m" class="btn disabled btn-secondary">M</a>
+                                    <a href="#label-n" class="btn disabled btn-secondary">N</a>
+                                    <a href="#label-o" class="btn btn-secondary">O</a>
+                                    <a href="#label-p" class="btn disabled btn-secondary">P</a>
+                                    <a href="#label-q" class="btn disabled btn-secondary">Q</a>
+                                    <a href="#label-r" class="btn disabled btn-secondary">R</a>
+                                    <a href="#label-s" class="btn btn-secondary">S</a>
+                                    <a href="#label-t" class="btn disabled btn-secondary">T</a>
+                                    <a href="#label-u" class="btn disabled btn-secondary">U</a>
+                                    <a href="#label-v" class="btn disabled btn-secondary">V</a>
+                                    <a href="#label-w" class="btn disabled btn-secondary">W</a>
+                                    <a href="#label-x" class="btn disabled btn-secondary">X</a>
+                                    <a href="#label-y" class="btn disabled btn-secondary">Y</a>
+                                    <a href="#label-z" class="btn disabled btn-secondary">Z</a>
+                                </div>
+                            </div>
+                            <div class="label-list">
+                                <h5 id="label-a">A</h5>
+                                <ul class="labels">
+                                    <li><a href="#">Assistance</a></li>
+                                </ul>
+                                <h5 id="label-c">C</h5>
+                                <ul class="labels">
+                                    <li><a href="#">Customer Service</a></li>
+                                </ul>
+                                <h5 id="label-d">D</h5>
+                                <ul class="labels">
+                                    <li><a href="#">Documentation</a></li>
+                                </ul>
+                                <h5 id="label-o">O</h5>
+                                <ul class="labels">
+                                    <li><a href="#">Operations</a></li>
+                                    <li><a href="#">Operators</a></li>
+                                </ul>
+                                <h5 id="label-s">S</h5>
+                                <ul class="labels">
+                                    <li><a href="#">Specifications</a></li>
+                                    <li><a href="#">Systems</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="">
@@ -119,6 +172,12 @@
                         <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
                         <div class="dropdown-menu">
                             <ul class="list-group versions">
+                                <li class="list-group-item">
+                                    <button class="btn btn-primary btn-block">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        <span class="btn-label">Add Version</span>
+                                    </button>
+                                </li>
                                 <li class="list-group-item active version">
                                     <h4 class="version-title">Version 1</h4>
                                     <h5 class="version-date">10/22/2016</h5>
@@ -174,6 +233,12 @@
                         <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
                         <div class="dropdown-menu">
                             <ul class="list-group versions">
+                                <li class="list-group-item">
+                                    <button class="btn btn-primary btn-block">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        <span class="btn-label">Add Version</span>
+                                    </button>
+                                </li>
                                 <li class="list-group-item active version">
                                     <h4 class="version-title">Version 1</h4>
                                     <h5 class="version-date">10/22/2016</h5>
@@ -229,6 +294,12 @@
                         <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
                         <div class="dropdown-menu">
                             <ul class="list-group versions">
+                                <li class="list-group-item">
+                                    <button class="btn btn-primary btn-block">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        <span class="btn-label">Add Version</span>
+                                    </button>
+                                </li>
                                 <li class="list-group-item active version">
                                     <h4 class="version-title">Version 1</h4>
                                     <h5 class="version-date">10/22/2016</h5>

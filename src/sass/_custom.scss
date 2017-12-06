@@ -26,14 +26,34 @@
 @import "node_modules/bootstrap/scss/code";
 @import "node_modules/bootstrap/scss/nav";
 @import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/transitions";
 
 $fa-font-path:        "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
 
 $tag-blue: lighten(blue, 25);
+$ex-red-light: #D29094;
+$ex-red: #A62229;
+$ex-red-dark: #8F1F25;
+
+$primary: $ex-red;
+
+body {
+    padding-top: 78px;
+}
 
 .navbar {
-    background-color: #e6e6e6;
+    background-color: $ex-red;
+    color: white;
+}
+
+
+.navbar-brand {
+    background: transparent url(../images/eXmark_logo.png) no-repeat center;
+    width: 150px;
+    height: 62px;
+    overflow: hidden;
+    text-indent: -9999em;
 }
 
 .btn-circle {
@@ -48,18 +68,43 @@ $tag-blue: lighten(blue, 25);
     }
 }
 
-.navbar-brand {
-    background: transparent url(../images/eXmark_logo.png) no-repeat center;
-    width: 150px;
-    height: 62px;
-    overflow: hidden;
-    text-indent: -9999em;
+.btn-group-justified {
+  display: flex;
+  width: 100%;
+  .btn,
+  .btn-group {
+    flex: 1;
+    .btn {
+      width: 100%;
+    }
+    .dropdown-menu {
+      left: auto;
+    }
+  }
 }
-.page-header {
-    padding-top: 3em;
+
+.wrapper {
     margin-bottom: $spacer;
 }
+
+.page-header {
+    @extend .wrapper;
+    padding-top: 3em;
+}
+
+.shaded {
+    background-color: #efefef;
+}
+
+
+.padded {
+    @extend .wrapper;
+    padding: 2em;
+}
+
+// file resources
 .resource {
+    @extend .card;
     border: lightgray 1px solid;
     background-color: #f6f6f6;
     padding: 2em;
@@ -83,37 +128,74 @@ $tag-blue: lighten(blue, 25);
 
     .dropdown-menu {
         width: 100%;
+        padding: 0;
     }
     .versions {
         width: 100%;
-        padding: 1em;
-    }
 
-    .labels {
-        padding: 0;
-        margin: 0;
-        @include clearfix;
+        .version {
+            @include clearfix;
+        }
 
-        li {
+        .version-title {
+            font-size: 1rem;
             float: left;
-            margin: .3em;
-            padding: .3em .8em;
-            background-color: #fafafa;
-            border: 1px solid #b6b6b6;
-            border-radius: .3em;
-            list-style: none;
+        }
 
-            &:before {
-                font-family: FontAwesome;
-                margin-right: .3em;
-                display:inline-block;
-                vertical-align: middle;
-                content: "\f02b";
-                color: #666;
-            }
+        .version-date {
+            font-size: .8rem;
+            float: right;
+        }
+        .description {
+            clear: left;
         }
     }
 }
+
+// Labels
+.labels {
+    padding: 0;
+    margin: 0;
+    @include clearfix;
+
+    li {
+        margin: .3em;
+        padding: .3em .8em;
+        background-color: #fafafa;
+        border: 1px solid #b6b6b6;
+        border-radius: .3em;
+        list-style: none;
+
+        &:before {
+            font-family: FontAwesome;
+            margin-right: .3em;
+            display:inline-block;
+            vertical-align: middle;
+            content: "\f02b";
+            color: #666;
+        }
+
+        .resource & {
+            float:left;
+        }
+
+
+    }
+
+}
+
+.label-container {
+    padding: 1em;
+
+    .label-index {
+        margin-bottom: $spacer;
+    }
+    .label-list {
+        height: 20em;
+        overflow-y: auto;
+    }
+}
+
 
 @import '_icons.scss';
 
