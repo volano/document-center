@@ -63,6 +63,16 @@
             <!-- Begin file list -->
 
             <div class="page-header">
+                <div class="float-right">
+                    <button class="btn btn-default btn-primary" data-toggle="modal" data-target="#upload">
+                        <span class="fa-stack">
+                            <i class="fa fa-file fa-stack-2x"></i>
+                            <i class="fa fa-plus-circle fa-stack-1x fa-stack-right fa-stack-bottom text-success"></i>
+                        </span>
+                        <span class="btn-label">Add Document</span>
+                    </button>
+                </div>
+
                 <h2>Document Central</h2>
                 <p>Main document repository</p>
                 <div class="shaded padded rounded">
@@ -135,15 +145,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="">
-                    <button class="btn btn-default btn-primary addFileButton" data-toggle="modal" data-target="#addDocumentModal">
-                        <span class="fa-stack">
-                            <i class="fa fa-file fa-stack-2x"></i>
-                            <i class="fa fa-plus-circle fa-stack-1x fa-stack-right fa-stack-bottom text-success"></i>
-                        </span>
-                        <span class="btn-label">Add Document</span>
-                    </button>
                 </div>
             </div>
 
@@ -224,9 +225,10 @@
                     </div>
                     <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
                     <i class="file-icon media-pdf"></i>
+
                     <div class="media-body">
-                        <h3> 2016 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
-                        <p class="description">2016 Product Bid Specs</p>
+                        <h3> 2018 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> B3W</span> </h3>
+                        <p class="description">2018 Product Bid Specs</p>
                     </div>
 
                     <div class="dropdown">
@@ -248,16 +250,6 @@
                                     <h4 class="version-title">Version 2</h4>
                                     <h5 class="version-date">11/23/2016</h5>
                                     <p class="description">Short description of the version</p>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 3</h4>
-                                    <h5 class="version-date">1/12/2017</h5>
-                                    <p class="description"></p>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 4</h4>
-                                    <h5 class="version-date">4/17/2017</h5>
-                                    <p class="description"></p>
                                 </li>
                             </ul>
                         </div>
@@ -286,8 +278,8 @@
                     <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
                     <i class="file-icon media-pdf"></i>
                     <div class="media-body">
-                        <h3> 2016 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
-                        <p class="description">2016 Product Bid Specs</p>
+                        <h3> 2017 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
+                        <p class="description">2017 Product Bid Specs</p>
                     </div>
 
                     <div class="dropdown">
@@ -300,7 +292,7 @@
                                         <span class="btn-label">Add Version</span>
                                     </button>
                                 </li>
-                                <li class="list-group-item active version">
+                                <li class="list-group-item version">
                                     <h4 class="version-title">Version 1</h4>
                                     <h5 class="version-date">10/22/2016</h5>
                                     <p class="description">Short description of the version</p>
@@ -310,7 +302,7 @@
                                     <h5 class="version-date">11/23/2016</h5>
                                     <p class="description">Short description of the version</p>
                                 </li>
-                                <li class="list-group-item version">
+                                <li class="list-group-item active version">
                                     <h4 class="version-title">Version 3</h4>
                                     <h5 class="version-date">1/12/2017</h5>
                                     <p class="description"></p>
@@ -342,7 +334,48 @@
         </div>
     </main>
 
+    <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Upload Document</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>The file you upload using this form will become the active version.</p>
+                    <form>
+                        <fieldset>
+                            <legend>Document Details</legend>
+                            <div class="form-group">
+                                <label for="document-title">Document Title</label>
+                                <input type="text" name="document-title" id="document-title" value="" placeholder="Document title to display in the manager" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="document-labels"></label>
+                                <input type="text" name="document-labels" id="document-labels" value="" class="form-control" />
+                                <span class="form-text text-muted small">Comma separated list of labels to associate with this document.</span>
+                            </div>
 
-    <script type="" </body>
+                            <div class="form-group">
+                                <label for="document-description"></label>
+                                <textarea name="document-description" id="document-description" class="form-control" rows="10" cols="20"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="document-file">Document Title</label>
+                                <input type="file" name="document-file" id="document-file" value="" class="form-control" />
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 </html>
