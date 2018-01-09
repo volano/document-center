@@ -1855,7 +1855,7 @@ input[type="button"].btn-block {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 1.25rem; }
+  padding: 0.75rem; }
 
 .card-title {
   margin-bottom: 0.75rem; }
@@ -7382,7 +7382,7 @@ body {
   margin-bottom: 1rem; }
 
 .page-header {
-  padding-top: 3em; }
+  padding-top: 1em; }
 
 .shaded {
   background-color: #efefef; }
@@ -7445,15 +7445,21 @@ body {
       vertical-align: middle;
       content: "\F02B";
       color: #666; }
+	.labels li.active {
+		background-color: #dc3545;
+	}
+	.labels li.active a {
+		color: black;
+	}
     .resource .labels li {
       float: left; }
 
 .label-container {
-  padding: 1em; }
+  padding: 0em; }
   .label-container .label-index {
     margin-bottom: 1rem; }
   .label-container .label-list {
-    height: 20em;
+    //height: 68vh;
     overflow-y: auto; }
 
 .file-icon {
