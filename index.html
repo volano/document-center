@@ -61,273 +61,277 @@
     </header>
     <main>
         <div class="container body-content">
-
             <!-- Begin file list -->
-
             <div class="page-header">
-                <div class="float-right">
-                    <button class="btn btn-default btn-primary" data-toggle="modal" data-target="#upload">
-                        <span class="fa-stack">
-                            <i class="fa fa-file fa-stack-2x"></i>
-                            <i class="fa fa-plus-circle fa-stack-1x fa-stack-right fa-stack-bottom text-success"></i>
-                        </span>
-                        <span class="btn-label">Add Document</span>
-                    </button>
-                </div>
+				<div class="shaded padded rounded">
+					<!--div class="wrapper"-->
+						<div class="input-group">
+							<input class="form-control" placeholder="Search" type="text" />
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-primary" value="Search"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
+							</div>
+						</div>
+					<!--/div-->
+					<!--button type="button" class="btn btn-block btn-primary" data-toggle="collapse" data-target="#labelListing" aria-expanded="false" aria-controls="labelListing">Label List</button-->
+					
+				</div>
+				<div class="row" style="padding-bottom:1em;">
+					<div class="col-lg-9">
+						<h3>Specifications</h3>
+					</div>
+					<div class="col-lg-3">
+						<button class="btn btn-default btn-primary pull-right" data-toggle="modal" data-target="#upload">
+							<span class="fa-stack">
+								<i class="fa fa-file fa-stack-2x"></i>
+								<i class="fa fa-plus-circle fa-stack-1x fa-stack-right fa-stack-bottom text-success"></i>
+							</span>
+							<span class="btn-label">Add Document</span>
+						</button>
+					</div>
+				</div>
 
-                <h2>Document Central</h2>
-                <p>Main document repository</p>
-                <div class="shaded padded rounded">
+				<div class="row">
+					<div class="col-lg-3">
+						<div id="labelListing" class="label-container">
+							<div class="card card-body">
+								<!--div class="label-index">
+									<div class="btn-group btn-group-justified btn-group-sm" role="group" aria-label="Alphabetical jump list">
+										<a href="#label-a" class="btn btn-secondary">A</a>
+										<a href="#label-b" class="btn disabled btn-secondary">B</a>
+										<a href="#label-c" class="btn btn-secondary">C</a>
+										<a href="#label-d" class="btn btn-secondary">D</a>
+										<a href="#label-e" class="btn disabled btn-secondary">E</a>
+										<a href="#label-f" class="btn disabled btn-secondary">F</a>
+										<a href="#label-g" class="btn disabled btn-secondary">G</a>
+										<a href="#label-h" class="btn disabled btn-secondary">H</a>
+										<a href="#label-i" class="btn disabled btn-secondary">I</a>
+										<a href="#label-j" class="btn disabled btn-secondary">J</a>
+										<a href="#label-k" class="btn disabled btn-secondary">K</a>
+										<a href="#label-l" class="btn disabled btn-secondary">L</a>
+										<a href="#label-m" class="btn disabled btn-secondary">M</a>
+										<a href="#label-n" class="btn disabled btn-secondary">N</a>
+										<a href="#label-o" class="btn btn-secondary">O</a>
+										<a href="#label-p" class="btn disabled btn-secondary">P</a>
+										<a href="#label-q" class="btn disabled btn-secondary">Q</a>
+										<a href="#label-r" class="btn disabled btn-secondary">R</a>
+										<a href="#label-s" class="btn btn-secondary">S</a>
+										<a href="#label-t" class="btn disabled btn-secondary">T</a>
+										<a href="#label-u" class="btn disabled btn-secondary">U</a>
+										<a href="#label-v" class="btn disabled btn-secondary">V</a>
+										<a href="#label-w" class="btn disabled btn-secondary">W</a>
+										<a href="#label-x" class="btn disabled btn-secondary">X</a>
+										<a href="#label-y" class="btn disabled btn-secondary">Y</a>
+										<a href="#label-z" class="btn disabled btn-secondary">Z</a>
+									</div>
+								</div-->
+								<div class="label-list">
+									<h5 id="label-a">A</h5>
+									<ul class="labels">
+										<li><a href="#">Assistance</a></li>
+									</ul>
+									<h5 id="label-c">C</h5>
+									<ul class="labels">
+										<li><a href="#">Customer Service</a></li>
+									</ul>
+									<h5 id="label-d">D</h5>
+									<ul class="labels">
+										<li><a href="#">Documentation</a></li>
+									</ul>
+									<h5 id="label-o">O</h5>
+									<ul class="labels">
+										<li><a href="#">Operations</a></li>
+										<li><a href="#">Operators</a></li>
+									</ul>
+									<h5 id="label-s">S</h5>
+									<ul class="labels">
+										<li class="active"><a href="#">Specifications</a></li>
+										<li><a href="#">Systems</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9">
+			
+						<!-- Begin Panel -->
+						<div id="panel">
 
-                    <div class="wrapper">
-                        <div class="input-group">
-                            <input class="form-control" placeholder="Search for labels" type="text" />
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-primary" value="Search"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
-                            </div>
-                        </div>
-                    </div>
+							<div class="resource">
+								<div class="toolbox">
+									<button class="btn btn-default btn-primary btn-circle editDocumentButton " data-bind="53">
+										<i class="fa fa-pencil"></i>
+										<span class="btn-label">Edit</span>
+									</button>
+									<button class="btn btn-default btn-danger btn-circle deleteButton " data-toggle="modal" data-target="#deleteConfirmModal" data-bind="53" data-type="Document">
+										<i class="fa fa-trash"></i>
+										<span class="btn-label">Delete</span>
+									</button>
+								</div>
+								<a class="pull-left media-image jpg" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
+								<i class="file-icon media-jpg"></i>
+								<div class="media-body">
+									<h3> 2016 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
+									<p class="description">2016 Product Bid Specs</p>
+								</div>
 
-                    <button type="button" class="btn btn-block btn-primary" data-toggle="collapse" data-target="#labelListing" aria-expanded="false" aria-controls="labelListing">Label List</button>
-                    <div id="labelListing" class="label-container collapse">
-                        <div class="card card-body">
-                            <div class="label-index">
-                                <div class="btn-group btn-group-justified btn-group-sm" role="group" aria-label="Alphabetical jump list">
-                                    <a href="#label-a" class="btn btn-secondary">A</a>
-                                    <a href="#label-b" class="btn disabled btn-secondary">B</a>
-                                    <a href="#label-c" class="btn btn-secondary">C</a>
-                                    <a href="#label-d" class="btn btn-secondary">D</a>
-                                    <a href="#label-e" class="btn disabled btn-secondary">E</a>
-                                    <a href="#label-f" class="btn disabled btn-secondary">F</a>
-                                    <a href="#label-g" class="btn disabled btn-secondary">G</a>
-                                    <a href="#label-h" class="btn disabled btn-secondary">H</a>
-                                    <a href="#label-i" class="btn disabled btn-secondary">I</a>
-                                    <a href="#label-j" class="btn disabled btn-secondary">J</a>
-                                    <a href="#label-k" class="btn disabled btn-secondary">K</a>
-                                    <a href="#label-l" class="btn disabled btn-secondary">L</a>
-                                    <a href="#label-m" class="btn disabled btn-secondary">M</a>
-                                    <a href="#label-n" class="btn disabled btn-secondary">N</a>
-                                    <a href="#label-o" class="btn btn-secondary">O</a>
-                                    <a href="#label-p" class="btn disabled btn-secondary">P</a>
-                                    <a href="#label-q" class="btn disabled btn-secondary">Q</a>
-                                    <a href="#label-r" class="btn disabled btn-secondary">R</a>
-                                    <a href="#label-s" class="btn btn-secondary">S</a>
-                                    <a href="#label-t" class="btn disabled btn-secondary">T</a>
-                                    <a href="#label-u" class="btn disabled btn-secondary">U</a>
-                                    <a href="#label-v" class="btn disabled btn-secondary">V</a>
-                                    <a href="#label-w" class="btn disabled btn-secondary">W</a>
-                                    <a href="#label-x" class="btn disabled btn-secondary">X</a>
-                                    <a href="#label-y" class="btn disabled btn-secondary">Y</a>
-                                    <a href="#label-z" class="btn disabled btn-secondary">Z</a>
-                                </div>
-                            </div>
-                            <div class="label-list">
-                                <h5 id="label-a">A</h5>
-                                <ul class="labels">
-                                    <li><a href="#">Assistance</a></li>
-                                </ul>
-                                <h5 id="label-c">C</h5>
-                                <ul class="labels">
-                                    <li><a href="#">Customer Service</a></li>
-                                </ul>
-                                <h5 id="label-d">D</h5>
-                                <ul class="labels">
-                                    <li><a href="#">Documentation</a></li>
-                                </ul>
-                                <h5 id="label-o">O</h5>
-                                <ul class="labels">
-                                    <li><a href="#">Operations</a></li>
-                                    <li><a href="#">Operators</a></li>
-                                </ul>
-                                <h5 id="label-s">S</h5>
-                                <ul class="labels">
-                                    <li><a href="#">Specifications</a></li>
-                                    <li><a href="#">Systems</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+								<div class="dropdown">
+									<button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
+									<div class="dropdown-menu">
+										<ul class="list-group versions">
+											<li class="list-group-item">
+												<button class="btn btn-primary btn-block">
+													<i class="fa fa-plus" aria-hidden="true"></i>
+													<span class="btn-label">Add Version</span>
+												</button>
+											</li>
+											<li class="list-group-item active version">
+												<h4 class="version-title">Version 1</h4>
+												<h5 class="version-date">10/22/2016</h5>
+												<p class="description">Short description of the version</p>
+											</li>
+											<li class="list-group-item version">
+												<h4 class="version-title">Version 2</h4>
+												<h5 class="version-date">11/23/2016</h5>
+												<p class="description">Short description of the version</p>
+											</li>
+											<li class="list-group-item version">
+												<h4 class="version-title">Version 3</h4>
+												<h5 class="version-date">1/12/2017</h5>
+												<p class="description"></p>
+											</li>
+											<li class="list-group-item version">
+												<h4 class="version-title">Version 4</h4>
+												<h5 class="version-date">4/17/2017</h5>
+												<p class="description"></p>
+											</li>
+										</ul>
+									</div>
 
-            <!-- Begin Panel -->
-            <div id="panel">
+								</div>
 
-                <div class="resource">
-                    <div class="toolbox">
-                        <button class="btn btn-default btn-primary btn-circle editDocumentButton " data-bind="53">
-                            <i class="fa fa-pencil"></i>
-                            <span class="btn-label">Edit</span>
-                        </button>
-                        <button class="btn btn-default btn-danger btn-circle deleteButton " data-toggle="modal" data-target="#deleteConfirmModal" data-bind="53" data-type="Document">
-                            <i class="fa fa-trash"></i>
-                            <span class="btn-label">Delete</span>
-                        </button>
-                    </div>
-                    <a class="pull-left media-image jpg" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
-                    <i class="file-icon media-jpg"></i>
-                    <div class="media-body">
-                        <h3> 2016 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
-                        <p class="description">2016 Product Bid Specs</p>
-                    </div>
+								<ul class="labels">
+									<li><a href="/Labels/">Documentation</a></li>
+									<li><a href="/Labels/">Specifications</a></li>
+									<li><a href="/Labels/">Customer Service</a></li>
+									<li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
 
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
-                        <div class="dropdown-menu">
-                            <ul class="list-group versions">
-                                <li class="list-group-item">
-                                    <button class="btn btn-primary btn-block">
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                        <span class="btn-label">Add Version</span>
-                                    </button>
-                                </li>
-                                <li class="list-group-item active version">
-                                    <h4 class="version-title">Version 1</h4>
-                                    <h5 class="version-date">10/22/2016</h5>
-                                    <p class="description">Short description of the version</p>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 2</h4>
-                                    <h5 class="version-date">11/23/2016</h5>
-                                    <p class="description">Short description of the version</p>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 3</h4>
-                                    <h5 class="version-date">1/12/2017</h5>
-                                    <p class="description"></p>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 4</h4>
-                                    <h5 class="version-date">4/17/2017</h5>
-                                    <p class="description"></p>
-                                </li>
-                            </ul>
-                        </div>
+							<div class="resource">
+								<div class="toolbox">
+									<button class="btn btn-default btn-primary btn-circle editDocumentButton " data-bind="53">
+										<i class="fa fa-pencil"></i>
+										<span class="btn-label">Edit</span>
+									</button>
+									<button class="btn btn-default btn-danger btn-circle deleteButton " data-toggle="modal" data-target="#deleteConfirmModal" data-bind="53" data-type="Document">
+										<i class="fa fa-trash"></i>
+										<span class="btn-label">Delete</span>
+									</button>
+								</div>
+								<a class="pull-left media-image tif" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
+								<i class="file-icon media-tif"></i>
 
-                    </div>
+								<div class="media-body">
+									<h3> 2018 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> B3W</span> </h3>
+									<p class="description">2018 Product Bid Specs</p>
+								</div>
 
-                    <ul class="labels">
-                        <li><a href="/Labels/">Documentation</a></li>
-                        <li><a href="/Labels/">Specifications</a></li>
-                        <li><a href="/Labels/">Customer Service</a></li>
-                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
+								<div class="dropdown">
+									<button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
+									<div class="dropdown-menu">
+										<ul class="list-group versions">
+											<li class="list-group-item">
+												<button class="btn btn-primary btn-block">
+													<i class="fa fa-plus" aria-hidden="true"></i>
+													<span class="btn-label">Add Version</span>
+												</button>
+											</li>
+											<li class="list-group-item active version">
+												<h4 class="version-title">Version 1</h4>
+												<h5 class="version-date">10/22/2016</h5>
+												<p class="description">Short description of the version</p>
+											</li>
+											<li class="list-group-item version">
+												<h4 class="version-title">Version 2</h4>
+												<h5 class="version-date">11/23/2016</h5>
+												<p class="description">Short description of the version</p>
+											</li>
+										</ul>
+									</div>
 
-                <div class="resource">
-                    <div class="toolbox">
-                        <button class="btn btn-default btn-primary btn-circle editDocumentButton " data-bind="53">
-                            <i class="fa fa-pencil"></i>
-                            <span class="btn-label">Edit</span>
-                        </button>
-                        <button class="btn btn-default btn-danger btn-circle deleteButton " data-toggle="modal" data-target="#deleteConfirmModal" data-bind="53" data-type="Document">
-                            <i class="fa fa-trash"></i>
-                            <span class="btn-label">Delete</span>
-                        </button>
-                    </div>
-                    <a class="pull-left media-image tif" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
-                    <i class="file-icon media-tif"></i>
+								</div>
 
-                    <div class="media-body">
-                        <h3> 2018 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> B3W</span> </h3>
-                        <p class="description">2018 Product Bid Specs</p>
-                    </div>
+								<ul class="labels">
+									<li><a href="/Labels/">Documentation</a></li>
+									<li><a href="/Labels/">Specifications</a></li>
+									<li><a href="/Labels/">Customer Service</a></li>
+									<li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
 
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
-                        <div class="dropdown-menu">
-                            <ul class="list-group versions">
-                                <li class="list-group-item">
-                                    <button class="btn btn-primary btn-block">
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                        <span class="btn-label">Add Version</span>
-                                    </button>
-                                </li>
-                                <li class="list-group-item active version">
-                                    <h4 class="version-title">Version 1</h4>
-                                    <h5 class="version-date">10/22/2016</h5>
-                                    <p class="description">Short description of the version</p>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 2</h4>
-                                    <h5 class="version-date">11/23/2016</h5>
-                                    <p class="description">Short description of the version</p>
-                                </li>
-                            </ul>
-                        </div>
+							<div class="resource">
+								<div class="toolbox">
+									<button class="btn btn-default btn-primary btn-circle editDocumentButton " data-bind="53">
+										<i class="fa fa-pencil"></i>
+										<span class="btn-label">Edit</span>
+									</button>
+									<button class="btn btn-default btn-danger btn-circle deleteButton " data-toggle="modal" data-target="#deleteConfirmModal" data-bind="53" data-type="Document">
+										<i class="fa fa-trash"></i>
+										<span class="btn-label">Delete</span>
+									</button>
+								</div>
+								<a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
+								<i class="file-icon media-pdf"></i>
+								<div class="media-body">
+									<h3> 2017 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
+									<p class="description">2017 Product Bid Specs</p>
+								</div>
 
-                    </div>
+								<div class="dropdown">
+									<button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
+									<div class="dropdown-menu">
+										<ul class="list-group versions">
+											<li class="list-group-item">
+												<button class="btn btn-primary btn-block">
+													<i class="fa fa-plus" aria-hidden="true"></i>
+													<span class="btn-label">Add Version</span>
+												</button>
+											</li>
+											<li class="list-group-item version">
+												<h4 class="version-title">Version 1</h4>
+												<h5 class="version-date">10/22/2016</h5>
+												<p class="description">Short description of the version</p>
+											</li>
+											<li class="list-group-item version">
+												<h4 class="version-title">Version 2</h4>
+												<h5 class="version-date">11/23/2016</h5>
+												<p class="description">Short description of the version</p>
+											</li>
+											<li class="list-group-item active version">
+												<h4 class="version-title">Version 3</h4>
+												<h5 class="version-date">1/12/2017</h5>
+												<p class="description"></p>
+											</li>
+											<li class="list-group-item version">
+												<h4 class="version-title">Version 4</h4>
+												<h5 class="version-date">4/17/2017</h5>
+												<p class="description"></p>
+											</li>
+										</ul>
+									</div>
 
-                    <ul class="labels">
-                        <li><a href="/Labels/">Documentation</a></li>
-                        <li><a href="/Labels/">Specifications</a></li>
-                        <li><a href="/Labels/">Customer Service</a></li>
-                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
+								</div>
 
-                <div class="resource">
-                    <div class="toolbox">
-                        <button class="btn btn-default btn-primary btn-circle editDocumentButton " data-bind="53">
-                            <i class="fa fa-pencil"></i>
-                            <span class="btn-label">Edit</span>
-                        </button>
-                        <button class="btn btn-default btn-danger btn-circle deleteButton " data-toggle="modal" data-target="#deleteConfirmModal" data-bind="53" data-type="Document">
-                            <i class="fa fa-trash"></i>
-                            <span class="btn-label">Delete</span>
-                        </button>
-                    </div>
-                    <a class="pull-left media-image pdf" target="_blank" href="https://asset-stage.exmark.com/documents/Home/OpenDocument/53"></a>
-                    <i class="file-icon media-pdf"></i>
-                    <div class="media-body">
-                        <h3> 2017 Bid Specifications <span class="document-info"><i class="fa fa-clipboard"></i> 8QU</span> </h3>
-                        <p class="description">2017 Product Bid Specs</p>
-                    </div>
-
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Versions</button>
-                        <div class="dropdown-menu">
-                            <ul class="list-group versions">
-                                <li class="list-group-item">
-                                    <button class="btn btn-primary btn-block">
-                                        <i class="fa fa-plus" aria-hidden="true"></i>
-                                        <span class="btn-label">Add Version</span>
-                                    </button>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 1</h4>
-                                    <h5 class="version-date">10/22/2016</h5>
-                                    <p class="description">Short description of the version</p>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 2</h4>
-                                    <h5 class="version-date">11/23/2016</h5>
-                                    <p class="description">Short description of the version</p>
-                                </li>
-                                <li class="list-group-item active version">
-                                    <h4 class="version-title">Version 3</h4>
-                                    <h5 class="version-date">1/12/2017</h5>
-                                    <p class="description"></p>
-                                </li>
-                                <li class="list-group-item version">
-                                    <h4 class="version-title">Version 4</h4>
-                                    <h5 class="version-date">4/17/2017</h5>
-                                    <p class="description"></p>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <ul class="labels">
-                        <li><a href="/Labels/">Documentation</a></li>
-                        <li><a href="/Labels/">Specifications</a></li>
-                        <li><a href="/Labels/">Customer Service</a></li>
-                        <li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-
-            </div>
+								<ul class="labels">
+									<li><a href="/Labels/">Documentation</a></li>
+									<li><a href="/Labels/">Specifications</a></li>
+									<li><a href="/Labels/">Customer Service</a></li>
+									<li><a href=""><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
             <!-- End Panel -->
 
         </div>
