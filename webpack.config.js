@@ -1,17 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
-const autoprefixer = require('autoprefixer');
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const NpmInstallPlugin = require('npm-install-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
-// Extractors
-const extractCSS = new ExtractTextPlugin('css/[name].min.css');
-const extractLESS = new ExtractTextPlugin('css/[name].min.css');
-const extractSASS = new ExtractTextPlugin('css/[name].min.css');
 
 const uglifier =  new UglifyJsPlugin({
                         test: /\.js($|\?)/i
@@ -76,29 +67,22 @@ module.exports = {
                 }]
             },
 
-
-            // LESS Handler
-            {
-                test: /\.less$/,
-                use: extractLESS.extract({
-                    use: [
-                        {loader:"css-loader"},
-                        {loader:"less-loader"}
-                    ],
-                    fallback: "style-loader"
-                })
-            },
-
             {
                 test: /\.scss$/,
-                use: extractSASS.extract({
-                    use: [{
-                        loader: "css-loader" // translates CSS into CommonJS
-                    }, {
-                        loader: "sass-loader" // compiles Sass to CSS
-                    }],
-                    fallback: "style-loader"
-                })
+                use: [
+                    {
+                      loader: MiniCssExtractPlugin.loader,
+                      options: {
+                        publicPath: (resourcePath, context) => {
+                          // publicPath is the relative path of the resource to the context
+                          // e.g. for ./css/admin/main.css the publicPath will be ../../
+                          // while for ./css/main.css the publicPath will be ../
+                          return path.relative(path.dirname(resourcePath), context) + '/';
+                        },
+                      },
+                    },
+                    'css-loader',
+                  ]
             },
             {
                 test: /\.js$/,
@@ -113,9 +97,9 @@ module.exports = {
         ]
     },
     plugins:[
-        extractSASS,
-        extractLESS,
-        extractCSS,
+        new MiniCssExtractPlugin({
+            filename: '[name].min.css',
+          }),
         uglifier,
         new webpack.ProvidePlugin({
           $: "jquery",
